@@ -1,4 +1,4 @@
-# twozero TD MCP
+﻿# twozero TD MCP
 
 MCP server for TouchDesigner, running inside the [twozero plugin](https://www.404zero.com/twozero).
 
@@ -62,3 +62,21 @@ claude mcp list
 
 - Base port is controlled by twozero setting `MCP default port`.
 - Multi-instance TD behavior is automatic: configure only one MCP URL in your client (`http://localhost:<MCP default port>/mcp`). Do not add separate client entries for each TD instance; twozero handles additional instance ports internally.
+
+## Usage Principles
+
+- Start each new chat with: `Show me what you can see in my TD project.`
+  This makes the agent use MCP immediately and confirm it can see your current TD context (project, network, selected operator).
+- After that, give tasks directly in normal language.
+- When you say `here in TD`, it means the place/network you are currently looking at in TD.
+- When you say `this operator in TD`, it means the operator you currently have selected.`r`n`r`n## Task Prompts (after MCP is confirmed)
+
+Use these prompts only after the agent already confirmed it sees your TouchDesigner context.
+
+- Errors: `Check errors across the whole project and show what is critical first.`
+- Performance: `Analyze what is causing lag and show the top slow operators.`
+- Compare patches/containers: `Compare container A and B: structure, parameters, and connections; list the differences.`
+- Work on selected operator: `Inspect this selected operator and nearby chain; do not change anything until I confirm.`
+- Safe mode first: `Diagnostics and plan first, changes only after approval.`
+- Verify after fixes: `After applying fixes, run error and performance checks again to verify.`
+
