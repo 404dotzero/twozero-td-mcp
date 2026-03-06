@@ -11,7 +11,7 @@ MCP server for TouchDesigner, running inside the [twozero plugin](https://www.40
 ## Quickstart
 
 1. Drop `twozero.tox` into TouchDesigner: [https://www.404zero.com/pisang/twozero.tox](https://www.404zero.com/pisang/twozero.tox) -> Install
-2. Turn on MCP in twozero settings.
+2. Turn on MCP:
 
 ![Turn on MCP](assets/mcpOn.gif)
 
