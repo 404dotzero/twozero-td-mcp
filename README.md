@@ -65,11 +65,16 @@ claude mcp list
 
 ## Usage Principles
 
-- Start each new chat with: `Show me what you can see in my TD project.`
+- Start each new chat with a prompt like:
+  - `Show me what you can see in my TD project.`
+  - `Check in TD: [your prompt]`
+  - `Here in TD: [your prompt]`
   This makes the agent use MCP immediately and confirm it can see your current TD context (project, network, selected operator).
 - After that, give tasks directly in normal language.
 - When you say `here in TD`, it means the place/network you are currently looking at in TD.
-- When you say `this operator in TD`, it means the operator you currently have selected.`r`n`r`n## Task Prompts (after MCP is confirmed)
+- When you say `this operator in TD`, it means the operator you currently have selected.
+
+## Task Prompts (after MCP is confirmed)
 
 Use these prompts only after the agent already confirmed it sees your TouchDesigner context.
 
@@ -79,4 +84,20 @@ Use these prompts only after the agent already confirmed it sees your TouchDesig
 - Work on selected operator: `Inspect this selected operator and nearby chain; do not change anything until I confirm.`
 - Safe mode first: `Diagnostics and plan first, changes only after approval.`
 - Verify after fixes: `After applying fixes, run error and performance checks again to verify.`
+
+## Localization Equivalents
+
+Use these equivalents when chatting in other languages:
+
+### Russian
+
+- `TouchDesigner` = `TD` = `тач`
+- `project` = `patch` = `проект` = `патч` = `.toe file`
+- `operator` = `op` = `оператор` = `оп`
+- `parameter` = `par` = `параметр` = `пар`
+- `here in TD` = `в таче вот тут`
+- `this operator in TD` = `в таче вот этот оп`
+- `Show me what you can see in my TD project.` = `Посмотри, что у меня в таче.`
+
+
 
