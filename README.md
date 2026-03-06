@@ -11,9 +11,13 @@ MCP server for TouchDesigner, running inside the [twozero plugin](https://www.40
 ## Quickstart
 
 1. Drop `twozero.tox` into TouchDesigner: [https://www.404zero.com/pisang/twozero.tox](https://www.404zero.com/pisang/twozero.tox) -> Install
-2. Prompt your agent (Cursor/Codex/Claude):
+2. Turn on MCP in twozero settings.
+
+![Turn on MCP](assets/mcpOn.gif)
+
+3. Prompt your agent (Cursor/Codex/Claude):
    - `Add twozero TD MCP for me with server key "twozero_td" and URL "http://localhost:40404/mcp". Configure it globally (user scope) so it is available from any project/workspace.`
-2. Or manually:
+4. Or manually:
 
 ## Cursor
 
