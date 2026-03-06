@@ -2,3 +2,5 @@ extension/node_modules/
 *.log
 .DS_Store
 Thumbs.db
+AGENTS.md
+.vs/
