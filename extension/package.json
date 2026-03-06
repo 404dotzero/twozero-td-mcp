@@ -1,0 +1,37 @@
+{
+  "name": "twozero-mcp",
+  "displayName": "twozero MCP",
+  "description": "Connects Cursor to TouchDesigner via MCP",
+  "version": "0.1.1",
+  "publisher": "twozero",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "twozero-mcp.setup",
+        "title": "twozero MCP: Setup Connection"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.3.0"
+  }
+}
+

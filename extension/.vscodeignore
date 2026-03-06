@@ -1,0 +1,7 @@
+src/**
+node_modules/**
+.vscode/**
+tsconfig.json
+**/*.ts
+**/*.map
+pisang_2025_v98.6.jpg
