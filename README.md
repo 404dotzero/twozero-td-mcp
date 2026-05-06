@@ -91,6 +91,7 @@ Use these prompts only after the agent already confirmed it sees your TouchDesig
 
 Phrases the agent recognizes as built-in flows:
 
+- `*here` / `*тут` (current network) and `*this` / `*эти` / `*этот` / `*эту` (selected operator(s)) — spatial markers. The asterisk is the magic: it never appears in normal code or text, so the agent treats them as unambiguous pointers and the response is rock-solid. Plain "here" / "this op" works too, but the asterisk version is bulletproof — use it when precision matters.
 - `study this project` / `изучи проект` — cold-start patch analysis. Best for unfamiliar/large projects where you want a tour, not a single-op poke.
 - `twozero bug report` / `twozero баг репорт` — built-in bug report flow. The word `twozero` is required (so generic "report a bug" doesn't trigger it accidentally).
 
