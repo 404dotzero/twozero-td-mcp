@@ -6,7 +6,7 @@ MCP server for TouchDesigner, running inside the [twozero plugin](https://www.40
 
 - TouchDesigner `2025.32280+`
 - twozero plugin installed in TD
-- For best TD results: use `Claude 4.6+` or `GPT-5.3+`
+- For best TD results: use `Claude 4.6+` or `GPT-5.5+`
 
 ## Quickstart
 
@@ -62,17 +62,19 @@ claude mcp list
 
 - Base port is controlled by twozero setting `MCP default port`.
 - Multi-instance TD behavior is automatic: configure only one MCP URL in your client (`http://localhost:<MCP default port>/mcp`). Do not add separate client entries for each TD instance; twozero handles additional instance ports internally.
+- When several TD instances are open at once, the agent lists them and asks which one to act on — no manual config.
 
 ## Usage Principles
 
 - Start each new chat with a prompt like:
   - `Show me what you can see in my TD project.`
-  - `Check in TD: [your prompt]`
-  - `Here in TD: [your prompt]`
+  - `check in TD: [your prompt]`
+  - `*here in TD: [your prompt]`
+  - `Check *this op in TD: [your prompt]`
   This makes the agent use MCP immediately and confirm it can see your current TD context (project, network, selected operator).
 - After that, give tasks directly in normal language.
-- When you say `here in TD`, it means the place/network you are currently looking at in TD.
-- When you say `this operator in TD`, it means the operator you currently have selected.
+- When you say `*here in TD`, it means the place/network you are currently looking at in TD.
+- When you say `*this op in TD` (or `*these ops` for multiple), it means the operator(s) you currently have selected.
 
 ## Task Prompts (after MCP is confirmed)
 
@@ -85,9 +87,16 @@ Use these prompts only after the agent already confirmed it sees your TouchDesig
 - Safe mode first: `Diagnostics and plan first, changes only after approval.`
 - Verify after fixes: `After applying fixes, run error and performance checks again to verify.`
 
+## Built-in Triggers
+
+Phrases the agent recognizes as built-in flows:
+
+- `study this project` / `изучи проект` — cold-start patch analysis. Best for unfamiliar/large projects where you want a tour, not a single-op poke.
+- `twozero bug report` / `twozero баг репорт` — built-in bug report flow. The word `twozero` is required (so generic "report a bug" doesn't trigger it accidentally).
+
 ## Localization Equivalents
 
-Use these equivalents when chatting in other languages:
+Mix freely with English — the agent recognizes these equivalents per language. TD technical terms (`op`, `par`, `comp`) work without translation.
 
 ### Russian
 
@@ -95,8 +104,9 @@ Use these equivalents when chatting in other languages:
 - `project` = `patch` = `проект` = `патч` = `.toe file`
 - `operator` = `op` = `оператор` = `оп`
 - `parameter` = `par` = `параметр` = `пар`
-- `here in TD` = `в таче вот тут`
-- `this operator in TD` = `в таче вот этот оп`
+- `*here in TD` = `в таче *тут`
+- `*this op in TD` = `в таче *этот оп`
+- `*these ops in TD` = `в таче *эти опы`
 - `Show me what you can see in my TD project.` = `Посмотри, что у меня в таче.`
 
 
