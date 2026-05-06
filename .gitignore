@@ -11,3 +11,24 @@ CLAUDE.md
 MCP_INVESTIGATION_GAPS.md
 
 REFACTOR_PLAN.md
+
+# Large/scraped/generated assets
+https.docs.derivative.ca/
+snippet_data/
+
+# Local/clutter
+__MACOSX/
+404dotzero/
+cc_td_promo/
+cc_td_promo.zip
+bash.exe.stackdump
+td_bug_ctrl_enter.txt
+__pycache__/
+
+# IDE / editor caches
+.obsidian/
+.playwright-mcp/
+_profile_tmp/
+
+# Private dev workspace (design docs, backups, test data, internal notes)
+PRIVATE/
