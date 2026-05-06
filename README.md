@@ -1,6 +1,6 @@
 ﻿# twozero TD MCP
 
-MCP server for TouchDesigner, running inside the [twozero plugin](https://www.404zero.com/twozero).
+MCP server for TouchDesigner, running inside the [twozero plugin](https://twozero.ai/).
 
 ## Requirements
 
